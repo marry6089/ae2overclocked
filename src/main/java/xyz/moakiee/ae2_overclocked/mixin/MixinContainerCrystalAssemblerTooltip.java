@@ -4,9 +4,8 @@ import appeng.api.stacks.AEKeyType;
 import appeng.core.localization.Tooltips;
 import appeng.helpers.externalstorage.GenericStackInv;
 import appeng.menu.slot.AppEngSlot;
-import com.glodblock.github.extendedae.common.tileentities.TileCrystalAssembler;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.player.Inventory;
+
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;
@@ -41,7 +40,7 @@ public class MixinContainerCrystalAssemblerTooltip {
      * so it formats the capacity with {@link FluidDisplayHelper#formatMb(long)}.
      */
     @Inject(method = "<init>", at = @At("TAIL"), require = 0)
-    private void ae2oc_afterCtor(int containerId, Inventory inventory, TileCrystalAssembler host, CallbackInfo ci) {
+    private void ae2oc_afterCtor(CallbackInfo ci) {
         this.tank.setEmptyTooltip(this::ae2oc_buildTankTooltip);
     }
 

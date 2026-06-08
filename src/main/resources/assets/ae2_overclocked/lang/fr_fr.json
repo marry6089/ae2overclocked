@@ -21,6 +21,7 @@
   "config.ae2_overclocked.cards.superEnergyCardBufferFE": "Tampon de la Carte de Superenergie (FE)",
   "config.ae2_overclocked.cards.parallelCardMaxMultiplier": "Multiplicateur Maximal de la Carte Parallele",
   "config.ae2_overclocked.cards.superSpeedCardMultiplier": "Multiplicateur de la Carte de Supervitesse",
+  "config.ae2_overclocked.cards.superSpeedCardOutputMultiplier": "Multiplicateur de Sortie de la Carte de Supervitesse",
   "config.ae2_overclocked.protection": "Parametres de Protection",
   "config.ae2_overclocked.protection.breakProtectionItemThreshold": "Seuil d'Objets pour la Protection de Casse",
   "pack.ae2_overclocked.ae2oc_xingluo": "Pack AE2 Overclocked de xingluo",

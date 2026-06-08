@@ -10,10 +10,18 @@ group = mod_group_id
 
 repositories {
     mavenLocal()
+    maven { url = 'https://maven.aliyun.com/repository/central' }
+    maven { url = 'https://maven.aliyun.com/repository/public' }
     maven {
         url = "https://www.cursemaven.com"
         content {
             includeGroup "curse.maven"
+        }
+    }
+    maven {
+        url = "https://api.modrinth.com/maven"
+        content {
+            includeGroup "maven.modrinth"
         }
     }
 }
@@ -123,10 +131,17 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
-    implementation "curse.maven:applied-energistics-2-223794:7027323"
-    implementation "curse.maven:ex-pattern-provider-892005:7627997"
-    implementation "curse.maven:advancedae-1084104:7668664"
-    implementation "curse.maven:ae2-crystal-science-1435174:7685287"
+    // AE2 编译时使用 API，运行时下载完整 jar
+    compileOnly "curse.maven:applied-energistics-2-223794:7027323"
+    runtimeOnly "curse.maven:applied-energistics-2-223794:7027323"
+    // AE2 依赖 GuideME
+    runtimeOnly "curse.maven:guideme-1173950:7127444"
+    // 以下前置模组仅运行时下载，编译时通过 Mixin/@Pseudo 解耦
+    runtimeOnly "curse.maven:ex-pattern-provider-892005:7627997"
+    runtimeOnly "curse.maven:glodium-957920:5787208"
+    runtimeOnly "curse.maven:advancedae-1084104:7668664"
+    implementation "curse.maven:geckolib-388172:7707149"
+    runtimeOnly "curse.maven:ae2-crystal-science-1435174:7685287"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

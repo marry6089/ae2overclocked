@@ -26,6 +26,7 @@ public final class Ae2OcConfig {
     public static final double DEFAULT_SUPER_ENERGY_BUFFER_FE = 2_000_000_000.0;
     public static final int DEFAULT_PARALLEL_MAX_MULTIPLIER = Integer.MAX_VALUE;
     public static final int DEFAULT_SUPER_SPEED_CARD_MULTIPLIER = 512;
+    public static final int DEFAULT_SUPER_SPEED_CARD_OUTPUT_MULTIPLIER = 512;
     public static final int DEFAULT_BREAK_PROTECTION_ITEM_THRESHOLD = 1000;
     public static final int DEFAULT_OVERCLOCK_INTERVAL_TICKS = 5;
     public static final double DEFAULT_FE_PER_AE = 2.0;
@@ -36,6 +37,7 @@ public final class Ae2OcConfig {
     private static final ModConfigSpec.DoubleValue SUPER_ENERGY_BUFFER_FE;
     private static final ModConfigSpec.IntValue PARALLEL_MAX_MULTIPLIER;
     private static final ModConfigSpec.IntValue SUPER_SPEED_CARD_MULTIPLIER;
+    private static final ModConfigSpec.IntValue SUPER_SPEED_CARD_OUTPUT_MULTIPLIER;
     private static final ModConfigSpec.IntValue BREAK_PROTECTION_ITEM_THRESHOLD;
     private static final ModConfigSpec.IntValue OVERCLOCK_INTERVAL_TICKS;
     private static final ModConfigSpec.ConfigValue<List<? extends String>> DISABLED_MACHINE_IDS;
@@ -64,6 +66,11 @@ public final class Ae2OcConfig {
                 .translation("config.ae2_overclocked.cards.superSpeedCardMultiplier")
                 .comment("Multiplier applied when Super Speed Card is active on I/O buses and I/O ports. Default: 512.")
                 .defineInRange("superSpeedCardMultiplier", DEFAULT_SUPER_SPEED_CARD_MULTIPLIER, 1, Integer.MAX_VALUE);
+
+        SUPER_SPEED_CARD_OUTPUT_MULTIPLIER = builder
+                .translation("config.ae2_overclocked.cards.superSpeedCardOutputMultiplier")
+                .comment("Multiplier applied when Super Speed Card is active on output (export) buses. Default: 512.")
+                .defineInRange("superSpeedCardOutputMultiplier", DEFAULT_SUPER_SPEED_CARD_OUTPUT_MULTIPLIER, 1, Integer.MAX_VALUE);
 
         OVERCLOCK_INTERVAL_TICKS = builder
                 .translation("config.ae2_overclocked.cards.overclockIntervalTicks")
@@ -134,6 +141,10 @@ public final class Ae2OcConfig {
 
     public static int getSuperSpeedCardMultiplier() {
         return Math.max(SUPER_SPEED_CARD_MULTIPLIER.get(), 1);
+    }
+
+    public static int getSuperSpeedCardOutputMultiplier() {
+        return Math.max(SUPER_SPEED_CARD_OUTPUT_MULTIPLIER.get(), 1);
     }
 
     public static int getBreakProtectionItemThreshold() {

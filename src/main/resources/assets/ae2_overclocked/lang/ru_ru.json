@@ -21,6 +21,7 @@
   "config.ae2_overclocked.cards.superEnergyCardBufferFE": "Буфер суперэнергетической карты (FE)",
   "config.ae2_overclocked.cards.parallelCardMaxMultiplier": "Максимальный множитель параллельной карты",
   "config.ae2_overclocked.cards.superSpeedCardMultiplier": "Множитель карты сверхскорости",
+  "config.ae2_overclocked.cards.superSpeedCardOutputMultiplier": "Множитель вывода карты сверхскорости",
   "config.ae2_overclocked.protection": "Настройки защиты",
   "config.ae2_overclocked.protection.breakProtectionItemThreshold": "Порог предметов для защиты от ломания",
   "pack.ae2_overclocked.ae2oc_xingluo": "Пак AE2 Overclocked от xingluo",

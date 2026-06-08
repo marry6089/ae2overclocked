@@ -21,6 +21,7 @@
   "config.ae2_overclocked.cards.superEnergyCardBufferFE": "슈퍼 에너지 카드 버퍼 (FE)",
   "config.ae2_overclocked.cards.parallelCardMaxMultiplier": "병렬 카드 최대 배율",
   "config.ae2_overclocked.cards.superSpeedCardMultiplier": "슈퍼 속도 카드 배율",
+  "config.ae2_overclocked.cards.superSpeedCardOutputMultiplier": "슈퍼 속도 카드 출력 배율",
   "config.ae2_overclocked.protection": "보호 설정",
   "config.ae2_overclocked.protection.breakProtectionItemThreshold": "파괴 보호 아이템 임계값",
   "pack.ae2_overclocked.ae2oc_xingluo": "AE2 Overclocked xingluo 팩",

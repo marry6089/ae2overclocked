@@ -73,4 +73,19 @@ public final class SuperSpeedNumberUtil {
     private static int ae2oc_getSuperSpeedMultiplier() {
         return Math.max(Ae2OcConfig.getSuperSpeedCardMultiplier(), 1);
     }
+
+    private static int ae2oc_getSuperSpeedOutputMultiplier() {
+        return Math.max(Ae2OcConfig.getSuperSpeedCardOutputMultiplier(), 1);
+    }
+
+    public static int convertLongToIntSaturatingForOutput(long value) {
+        long result = value * ae2oc_getSuperSpeedOutputMultiplier() * ae2oc_getExtendedAeBusSpeed();
+        if (result > Integer.MAX_VALUE) {
+            return Integer.MAX_VALUE;
+        } else if (result < Integer.MIN_VALUE) {
+            return Integer.MIN_VALUE;
+        } else {
+            return (int) result;
+        }
+    }
 }

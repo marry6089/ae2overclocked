@@ -45,6 +45,7 @@ public final class ModUpgrades {
                 // 超速卡：EAE I/O Port & EAE buses
                 registerSuperSpeedForMachineId(eaeModId + ":ex_io_port");
                 registerSuperSpeedForMachineId(eaeModId + ":tag_export_bus");
+                registerSuperSpeedForItemId(eaeModId + ":tag_export_bus", "group.ex_io_bus_part");
                 registerSuperSpeedForItemId(eaeModId + ":ex_import_bus_part", "group.ex_io_bus_part");
                 registerSuperSpeedForItemId(eaeModId + ":ex_export_bus_part", "group.ex_io_bus_part");
             }

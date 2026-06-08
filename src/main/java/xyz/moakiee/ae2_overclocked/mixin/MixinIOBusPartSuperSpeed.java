@@ -7,8 +7,10 @@
 package xyz.moakiee.ae2_overclocked.mixin;
 
 import appeng.api.upgrades.IUpgradeableObject;
+import appeng.parts.automation.ExportBusPart;
 import appeng.parts.automation.IOBusPart;
 import xyz.moakiee.ae2_overclocked.ModItems;
+import xyz.moakiee.ae2_overclocked.support.SuperSpeedNumberUtil;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -24,7 +26,12 @@ public abstract class MixinIOBusPartSuperSpeed implements IUpgradeableObject {
             return;
         }
 
-        int result = xyz.moakiee.ae2_overclocked.support.SuperSpeedNumberUtil.convertLongToIntSaturating(cir.getReturnValue());
+        int result;
+        if ((Object) this instanceof ExportBusPart) {
+            result = SuperSpeedNumberUtil.convertLongToIntSaturatingForOutput(cir.getReturnValue());
+        } else {
+            result = SuperSpeedNumberUtil.convertLongToIntSaturating(cir.getReturnValue());
+        }
         cir.setReturnValue(result);
     }
 }

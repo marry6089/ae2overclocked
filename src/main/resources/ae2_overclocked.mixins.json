@@ -34,6 +34,7 @@
     "MixinIOBusPartSuperSpeed",
     "MixinExImportBusSuperSpeed",
     "MixinExExportBusSuperSpeed",
+    "MixinExTagExportBusSuperSpeed",
     "MixinIOPortSuperSpeed",
     "MixinExIOPortSuperSpeed"
   ],
